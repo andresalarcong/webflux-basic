@@ -1,0 +1,11 @@
+
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+	compile project(':webflux-basic-domain')
+	implementation('org.springframework.boot:spring-boot-starter-data-mongodb-reactive:2.0.5.RELEASE')
+}
+

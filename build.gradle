@@ -1,0 +1,24 @@
+
+allprojects {
+    apply plugin: 'eclipse-wtp'
+
+    group = 'co.alarcon.fenix'
+    version = '0.0.1-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+}
+
+subprojects {
+	
+}
+
+dependencies {
+	//compile project(":webflux-basic-interface")
+  
+	//compile('org.springframework.boot:spring-boot-starter')
+	//testCompile('org.springframework.boot:spring-boot-starter-test')
+}

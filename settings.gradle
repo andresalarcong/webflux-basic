@@ -1,0 +1,6 @@
+rootProject.name = 'webflux-basic'
+
+include 'webflux-basic-interface'
+include 'webflux-basic-domain'
+include 'webflux-basic-infrastructure'
+include 'webflux-basic-web'

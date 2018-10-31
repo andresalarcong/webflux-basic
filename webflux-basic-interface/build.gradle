@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.0.M4'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    compile project(':webflux-basic-domain')
+    compile project(':webflux-basic-infrastructure')
+
+	//TODO OJO SOLUCIONAR ESTA DEPENDENCIA
+
+	implementation('org.springframework.boot:spring-boot-starter-data-mongodb-reactive:2.0.5.RELEASE')
+	implementation('org.apache.commons:commons-lang3:3.8.1')
+	implementation('org.modelmapper:modelmapper:2.3.0')
+	//implementation('org.springframework.security:spring-security-crypto:5.1.1.BUILD-SNAPSHOT')
+	//implementation('org.springframework.boot:spring-boot-starter-security:2.0.5.RELEASE')
+	implementation('org.springframework.boot:spring-boot-starter-webflux:2.0.5.RELEASE')
+    implementation('org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE')
+   	testImplementation('io.projectreactor:reactor-test:3.2.1.RELEASE')
+}
